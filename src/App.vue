@@ -2,7 +2,7 @@
   <div id="app">
     <button @click="deleteTodo">選択したTODOを削除</button>
     <ul>
-      <li v-for="todo in todos">
+      <li v-for="todo in todos" :key="todo.title">
         <input type="checkbox" v-model="todo.checked"> {{ todo.title }}
       </li>
     </ul>
@@ -32,7 +32,6 @@ export default {
         title: this.value,
         checked: false
       });
-      console.log(this.todos);
       this.value = ""; // reset
     },
     deleteTodo() {
