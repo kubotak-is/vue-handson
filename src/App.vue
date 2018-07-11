@@ -36,7 +36,7 @@ export default {
     },
     deleteTodo() {
       this.todos = this.todos.filter(todo => {
-        if (!todo.checked) return true;
+        return !todo.checked;
       });
     }
   }
